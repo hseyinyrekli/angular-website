@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="list">
+    <ul>
+      <li>Instagram</li>
+      <li>Armut</li>
+      <li>Telefon</li>
+      <li>Adres</li>
+    </ul>
+  </div>
+
+  <form [formGroup]="myForm">
+    <div class="name">
+      Name :
+      <input formControlName="name" type="text" />
+    </div>
+    <br />
+    <div class="email">
+      Email :
+      <input formControlName="email" type="text" />
+    </div>
+    <button *ngIf="!isShow" (click)="save()">Gönder</button>
+    <button *ngIf="isShow" (click)="update()">Yenile</button>
+    <h3 *ngIf="isShow">Kaydınız başarılı bir şekilde gönderilmiştir.</h3>
+  </form>
+</div>
+
+<router-outlet></router-outlet>
